@@ -5,11 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Resultado implements Puntuable{
+public class Resultado implements Puntuable {
     private String id;
     private String idPrueba;
     private TipoPrueba tipoPrueba;
@@ -18,6 +20,20 @@ public class Resultado implements Puntuable{
 
     @Override
     public int getPuntos() {
-        return 0;
+
+
+        return switch (posicion) {
+            case 1 -> 100;
+            case 2 -> 80;
+            case 3 -> 60;
+            case 4 -> 50;
+            case 5 -> 40;
+            case 6 -> 30;
+            case 7 -> 20;
+            case 8 -> 10;
+            default -> 0;
+        };
     }
+
 }
+
