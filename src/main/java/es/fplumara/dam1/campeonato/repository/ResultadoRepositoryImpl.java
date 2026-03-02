@@ -9,7 +9,7 @@ public class ResultadoRepositoryImpl implements ResultadoRepository {
 
     @Override
     public void save(Resultado r) {
-        datosResultados.put(UUID.randomUUID().toString(), r);
+        datosResultados.put(r.getId(), r);
     }
 
     @Override

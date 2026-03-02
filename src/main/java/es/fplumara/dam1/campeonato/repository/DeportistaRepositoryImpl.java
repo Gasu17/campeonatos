@@ -11,7 +11,7 @@ public class DeportistaRepositoryImpl implements DeportistaRepository {
     @Override
     public void save(Deportista d) {
 
-        datosDeportistas.put(UUID.randomUUID().toString(), d);
+        datosDeportistas.put(d.getId(), d);
 
 
     }
